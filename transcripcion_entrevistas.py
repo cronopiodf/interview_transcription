@@ -24,7 +24,7 @@ def generate_srt(transcription, srt_path):
             text = segment["text"]
             file.write(f"{i}\n{start_time} --> {end_time}\n{text}\n\n")
 
-def transcribe_and_diarize(audio_file_path, output_dir, num_speakers):
+def transcribe_and_diarize(audio_file_path, output_dir, num_speakers, auth_token):
     if not torch.cuda.is_available():
         raise RuntimeError("GPU no disponible. Este script requiere una GPU para ejecutarse.")
 
@@ -60,7 +60,7 @@ def transcribe_and_diarize(audio_file_path, output_dir, num_speakers):
         waveform, sample_rate = torchaudio.load(wav_audio_file_path)
         pipeline = Pipeline.from_pretrained(
             "pyannote/speaker-diarization-3.31",
-            use_auth_token="TU TOKEN" #colocar la autentificación de Hugging Face
+            use_auth_token=auth_token
         )
         pipeline.to(torch.device("cuda"))
 
@@ -104,9 +104,12 @@ def transcribe_and_diarize(audio_file_path, output_dir, num_speakers):
 
     print(f"Transcripción, diarización de hablantes y archivo SRT completadas y guardadas en el directorio '{output_dir}'.")
 
-# Parámetros configurables
-audio_file_path = "LA DIRECCIÓN DE LA GRABACIÓN EN FORMATO MP3"
-output_dir = "audio_transcrpción"
-num_speakers = 2
+# Solicitar al usuario los parámetros necesarios
+auth_token = input("Ingrese su token de Pyannote, siga las indicaciones según https://github.com/pyannote/pyannote-audio: ")
+audio_file_path = input("Ingrese la dirección del archivo de audio en formato MP3, click derecho sobre el archivo, copiar ruta y pegar: ")
+num_speakers = int(input("Ingrese el número de hablantes: "))
 
-transcribe_and_diarize(audio_file_path, output_dir, num_speakers)
+# Parámetros configurables
+output_dir = "audio_transcripción"
+
+transcribe_and_diarize(audio_file_path, output_dir, num_speakers, auth_token)
