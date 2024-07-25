@@ -59,7 +59,7 @@ def transcribe_and_diarize(audio_file_path, output_dir, num_speakers, auth_token
     try:
         waveform, sample_rate = torchaudio.load(wav_audio_file_path)
         pipeline = Pipeline.from_pretrained(
-            "pyannote/speaker-diarization-3.31",
+            "pyannote/speaker-diarization-3.1",
             use_auth_token=auth_token
         )
         pipeline.to(torch.device("cuda"))
