@@ -46,12 +46,12 @@ locale.getpreferredencoding = lambda: 'UTF-8'
 !pip install librosa	
 
 
-
-
 FINALMENTE CLONAR REPOSITORIO Y EJECUTAR
 
 !git clone https://github.com/cronopiodf/interview_transcription.git
 
+
 %cd interview_transcription
+
 
 from interview_transcription import transcripcion_entrevistas
