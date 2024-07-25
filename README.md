@@ -11,7 +11,9 @@ Aceptar preferencias: https://huggingface.co/pyannote/speaker-diarization-3.1
 Generar token en: https://huggingface.co/settings/tokens 
 
 
-En https://colab.research.google.com/ instalar lo siguiente:
+
+En entorno de https://colab.research.google.com/ instalar lo siguiente:
+
 
 
 pip install pyannote.audio
@@ -36,6 +38,7 @@ pip install torchaudio
 
 
 
+
 import locale
 
 locale.getpreferredencoding = lambda: 'UTF-8'
@@ -48,3 +51,7 @@ locale.getpreferredencoding = lambda: 'UTF-8'
 FINALMENTE CLONAR REPOSITORIO Y EJECUTAR
 
 !git clone https://github.com/cronopiodf/interview_transcription.git
+
+%cd interview_transcription
+
+from interview_transcription import transcripcion_entrevistas
