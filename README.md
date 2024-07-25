@@ -69,7 +69,7 @@ from interview_transcription import transcripcion_entrevistas
 
 ### Autoría
 
-Este proyecto ha sido generado por David Añazco bajo el proyecto de investigación: *Sustainable Educational Leadership in Ecuador: Research-Practice Partnerships for Leadership Policy and Practices in Secondary  Schools* que forma parte de su proceso de investigación doctoral PhD en la Universidad Católica de Lovaina.
+Este proyecto ha sido generado por David Añazco @cronopiodf bajo el proyecto de investigación: *Sustainable Educational Leadership in Ecuador: Research-Practice Partnerships for Leadership Policy and Practices in Secondary  Schools* que forma parte de su proceso de investigación doctoral PhD en la Universidad Católica de Lovaina.
 
 ##### Nota
 Los archivos que genera este proyecto no son definitivos, se pueden entender como borradores para un proceso de pulida final de la trancripción y posterior análisis en proyectos de investigación.
