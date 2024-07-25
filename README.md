@@ -5,7 +5,9 @@ Combina Whisper de Open IA y PyAnnote para hacer transcripciones y diarizaciones
 Requiere 
 
 Aceptar preferencias: https://hf.co/pyannote/segmentation-3.0
-Aceptar preferencias: pyannote/speaker-diarization-3.1 
+
+Aceptar preferencias: https://huggingface.co/pyannote/speaker-diarization-3.1
+
 Generar token en: https://huggingface.co/settings/tokens 
 
 
