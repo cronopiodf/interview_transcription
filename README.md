@@ -10,24 +10,43 @@ Genera los siguientes archivos en la carpeta "audio_transcripción":
 5. Identificación_hablantes.txt (cominación de la trancripción con la diarización)
 
 
-####Requiere generar token en https://huggingface.com
--Aceptar preferencias: https://hf.co/pyannote/segmentation-3.0
--Aceptar preferencias: https://huggingface.co/pyannote/speaker-diarization-3.1
+### Requiere generar token en hugging-face
+
+- Aceptar preferencias: https://hf.co/pyannote/segmentation-3.0
+- Aceptar preferencias: https://huggingface.co/pyannote/speaker-diarization-3.1
 
 - Generar token en: https://huggingface.co/settings/tokens
 
-####En entorno Google Colab Instalar lo siguiente (https://colab.research.google.com)
+### En entorno Google Colab Instalar lo siguiente (https://colab.research.google.com)
 
 ```python
 pip install pyannote.audio
+```
+```python
 pip install --upgrade pyannote.audio
+```
+```python
 pip install git+https://github.com/openai/whisper.git
+```
+```python
 pip install --upgrade --no-deps --force-reinstall git+https://github.com/openai/whisper.git
+```
+```python
 pip install ffmpeg
+```
+```python
 !pip install pydub
+```
+```python
 pip install setuptools-rust
+```
+```python
 !pip install torch
+```
+```python
 pip install torchaudio
+```
+```python
 !pip install soundfile
 ```
 ```python
@@ -48,11 +67,9 @@ locale.getpreferredencoding = lambda: 'UTF-8'
 from interview_transcription import transcripcion_entrevistas
 ```
 
+### Autoría
 
-```
-###Autoría
+Este proyecto ha sido generado por David Añazco bajo el proyecto de investigación: *Sustainable Educational Leadership in Ecuador: Research-Practice Partnerships for Leadership Policy and Practices in Secondary  Schools* que forma parte de su proceso de investigación doctoral PhD en la Universidad Católica de Lovaina.
 
-Este proyecto ha sido generado por David Añazco bajo el proyecto de investigación: *Sustainable Educational Leadership in Ecuador: Research-Practice Partnerships for Leadership Policy and Practices in Secondary  Schools* que forma parte de su proceso de investigación doctoral PhD en la Universidad Católica de Lovaina. 
-
-###NOTA
+##### Nota
 Los archivos que genera este proyecto no son definitivos, se pueden entender como borradores para un proceso de pulida final de la trancripción y posterior análisis en proyectos de investigación.
