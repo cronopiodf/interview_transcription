@@ -15,6 +15,7 @@ Instalación (una vez):
 import gc
 import json
 import os
+from datetime import datetime
 
 import torch
 import whisperx
@@ -44,6 +45,46 @@ def liberar():
     gc.collect()
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
+
+
+def rtf_escape(texto):
+    """Escapa texto para RTF (tildes, ñ, signos ¿¡ y cualquier carácter Unicode)."""
+    out = []
+    for ch in texto:
+        if ch in "\\{}":
+            out.append("\\" + ch)
+        elif ch == "\n":
+            out.append("\\line ")
+        elif ord(ch) < 128:
+            out.append(ch)
+        else:
+            # RTF usa enteros de 16 bits con signo; los caracteres fuera del BMP van como par sustituto
+            b = ch.encode("utf-16-le")
+            for i in range(0, len(b), 2):
+                n = int.from_bytes(b[i:i + 2], "little")
+                out.append(f"\\u{n - 65536 if n > 32767 else n}?")
+    return "".join(out)
+
+
+def escribir_rtf(path, turnos, titulo, language):
+    """Transcripción por hablante en RTF: se abre en Word/LibreOffice y se importa en NVivo/Atlas.ti."""
+    fecha = datetime.now().strftime("%d/%m/%Y")
+    partes = [
+        r"{\rtf1\ansi\ansicpg1252\deff0",
+        r"{\fonttbl{\f0\fswiss Calibri;}}",
+        r"{\colortbl;\red110\green110\blue110;}",
+        r"\viewkind4\uc1\f0\fs22",
+        rf"{{\pard\sa60\b\fs32 {rtf_escape(titulo)}\par}}",
+        rf"{{\pard\sa360\cf1\fs20 {rtf_escape(f'Idioma: {language} · Generado: {fecha}')}\par}}",
+    ]
+    for t in turnos:
+        hora = format_timestamp(t["start"], ".")[:8]
+        partes.append(
+            rf"{{\pard\sa200 {{\cf1 [{hora}]}} {{\b {rtf_escape(t['speaker'])}:}} {rtf_escape(t['text'])}\par}}"
+        )
+    partes.append("}")
+    with open(path, "w", encoding="ascii") as f:
+        f.write("\n".join(partes))
 
 
 def transcribe_and_diarize(audio_path, output_dir, num_speakers, hf_token, language=None):
@@ -120,6 +161,10 @@ def transcribe_and_diarize(audio_path, output_dir, num_speakers, hf_token, langu
     with open(os.path.join(output_dir, "identificación_hablantes.txt"), "w", encoding="utf-8") as f:
         for t in turnos:
             f.write(f"[{format_timestamp(t['start'], '.')[:8]}] {t['speaker']}: {t['text']}\n\n")
+
+    # 5e. La misma transcripción por hablante en RTF (Word, LibreOffice, NVivo, Atlas.ti)
+    escribir_rtf(os.path.join(output_dir, "identificación_hablantes.rtf"), turnos,
+                 f"Transcripción: {os.path.basename(audio_path)}", language)
 
     print(f"Listo. Archivos guardados en '{output_dir}' (idioma detectado: {language}).")
 
