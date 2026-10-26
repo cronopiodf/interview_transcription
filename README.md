@@ -11,7 +11,7 @@ Genera los siguientes archivos en la carpeta `audio_transcripción`:
 1. `transcripcion.json`: todos los datos (frases, palabras, tiempos y hablantes). Útil para análisis posteriores.
 2. `transcripción_pura.txt`: el texto completo, sin hablantes ni tiempos.
 3. `transcripcion_subtitulo.srt`: subtítulos con el hablante de cada frase. Puedes cargarlos en un reproductor (por ejemplo VLC) mientras escuchas el audio para revisar la transcripción. Modifica visualización y carga el subtitulo. Lo verás así: 
-  <img width="1254" height="634" alt="imagen" src="https://github.com/user-attachments/assets/87f7e2d1-46dd-454a-a314-c6bef0d5f8fd" />
+  <img width="600" height="300" alt="imagen" src="https://github.com/user-attachments/assets/87f7e2d1-46dd-454a-a314-c6bef0d5f8fd" />
 
 5. `identificación_hablantes.txt`: la transcripción organizada por turnos de palabra, con la hora de inicio de cada turno. 
 
@@ -27,7 +27,7 @@ Genera los siguientes archivos en la carpeta `audio_transcripción`:
 
 1. Crea una cuenta gratuita en https://huggingface.co
 2. Entra en https://huggingface.co/pyannote/speaker-diarization-community-1 y acepta las condiciones de uso.
-3. Crea un token de lectura ("Read") en https://huggingface.co/settings/tokens y guárdalo. Es una clave que el programa te pedirá.
+3. Crea un token de lectura ("Read") en https://huggingface.co/settings/tokens y guárdalo. Es una clave que el programa te pedirá más adelante. NOTA: No compartas ni piedas esta clave, consérvala en un lugar seguro. 
 
 > Si ya tenías un token de la versión anterior, puedes reutilizarlo, pero **debes aceptar igualmente las condiciones del paso 2**: el modelo es nuevo.
 
@@ -106,8 +106,10 @@ The following files are generated in the `audio_transcripción` folder:
 
 1. `transcripcion.json`: all the data (sentences, words, timestamps and speakers). Useful for further analysis.
 2. `transcripción_pura.txt`: the full text, without speakers or timestamps.
-3. `transcripcion_subtitulo.srt`: subtitles with the speaker of each sentence. Load them in a player (e.g. VLC) while listening to the audio to check the transcription.
-4. `identificación_hablantes.txt`: the transcription organized by speaking turns, with the start time of each turn.
+3. `transcripcion_subtitulo.srt`: subtitles with the speaker of each sentence. Load them in a player (e.g. VLC) while listening to the audio to check the transcription. You must select a mode of visualization, upload subtitle file (.srt) and reproduce. You will see something like this:
+   <img width="600" height="300" alt="imagen" src="https://github.com/user-attachments/assets/87f7e2d1-46dd-454a-a314-c6bef0d5f8fd" />
+   
+5. `identificación_hablantes.txt`: the transcription organized by speaking turns, with the start time of each turn.
 
 ## Step 1. Set up your Hugging Face account (first time only)
 
