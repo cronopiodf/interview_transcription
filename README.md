@@ -20,8 +20,8 @@ Genera los siguientes archivos en la carpeta `audio_transcripción`:
 
 [00:02:21] SPEAKER_01: Bueno, yo diría que es compartido...
 ```
-6. 5. `identificación_hablantes.rtf`: la misma transcripción por turnos, con formato (título, hablantes en negrita y tiempos en gris). Se abre directamente en Word o LibreOffice y se puede importar en NVivo o Atlas.ti. Es el archivo más cómodo para revisar, sustituir los hablantes por seudónimos y empezar a codificar. Por ejemplo:
-   <img width="1119" height="505" alt="imagen" src="https://github.com/user-attachments/assets/55071ab7-d372-4fd7-ba15-b8de3f9ca045" />
+6. `identificación_hablantes.rtf`: la misma transcripción por turnos, con formato (título, hablantes en negrita y tiempos en gris). Se abre directamente en Word o LibreOffice y se puede importar en NVivo o Atlas.ti. Es el archivo más cómodo para revisar, sustituir los hablantes por seudónimos y empezar a codificar. Por ejemplo:
+   <img width="600" height="200" alt="imagen" src="https://github.com/user-attachments/assets/55071ab7-d372-4fd7-ba15-b8de3f9ca045" />
 
 
 ---
