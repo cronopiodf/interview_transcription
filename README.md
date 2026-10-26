@@ -13,13 +13,16 @@ Genera los siguientes archivos en la carpeta `audio_transcripción`:
 3. `transcripcion_subtitulo.srt`: subtítulos con el hablante de cada frase. Puedes cargarlos en un reproductor (por ejemplo VLC) mientras escuchas el audio para revisar la transcripción. Modifica visualización y carga el subtitulo. Lo verás así: 
   <img width="600" height="300" alt="imagen" src="https://github.com/user-attachments/assets/87f7e2d1-46dd-454a-a314-c6bef0d5f8fd" />
 
-5. `identificación_hablantes.txt`: la transcripción organizada por turnos de palabra, con la hora de inicio de cada turno. 
+5. `identificación_hablantes.txt`: la transcripción organizada por turnos de palabra, con la hora de inicio de cada turno: 
 
 ```
 [00:02:15] SPEAKER_00: ¿Cómo describiría el liderazgo en su institución?
 
 [00:02:21] SPEAKER_01: Bueno, yo diría que es compartido...
 ```
+6. 5. `identificación_hablantes.rtf`: la misma transcripción por turnos, con formato (título, hablantes en negrita y tiempos en gris). Se abre directamente en Word o LibreOffice y se puede importar en NVivo o Atlas.ti. Es el archivo más cómodo para revisar, sustituir los hablantes por seudónimos y empezar a codificar. Por ejemplo:
+   <img width="1119" height="505" alt="imagen" src="https://github.com/user-attachments/assets/55071ab7-d372-4fd7-ba15-b8de3f9ca045" />
+
 
 ---
 
@@ -110,6 +113,9 @@ The following files are generated in the `audio_transcripción` folder:
    <img width="600" height="300" alt="imagen" src="https://github.com/user-attachments/assets/87f7e2d1-46dd-454a-a314-c6bef0d5f8fd" />
    
 5. `identificación_hablantes.txt`: the transcription organized by speaking turns, with the start time of each turn.
+6. 5. `identificación_hablantes.rtf`: the same turn-by-turn transcription, formatted (title, speakers in bold, timestamps in grey). It opens directly in Word or LibreOffice and can be imported into NVivo or Atlas.ti. It is the most convenient file for reviewing, replacing speakers with pseudonyms and starting to code. For instance:
+      <img width="1119" height="505" alt="imagen" src="https://github.com/user-attachments/assets/55071ab7-d372-4fd7-ba15-b8de3f9ca045" />
+      
 
 ## Step 1. Set up your Hugging Face account (first time only)
 
